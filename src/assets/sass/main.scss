@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    color: #fff;
+    font-family: Golos;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.5)
+      ), url('@/assets/img/runway.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: scroll;
+    height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 60px;
+    height: 100vh;
+}
+
+.error {
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    img {
+        padding: 10px;
+    }
+}
+
+.header {
+    padding: 20px;
+    height: 80px;
+    display: flex;
+    &__logo {
+        height: 100%;
+        width: auto;
+    }
+    &__admin {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        color: #d1d6ed;
+        padding: 5px 10px;
+        svg {
+            margin: auto 10px auto 0;
+        }
+    }
+}
+
+.content {
+    padding: 20px;
+    height: calc(100% - 80px);
+    
+    &__info {
+        flex: 1;
+        display: flex;
+        height: calc(100% - 45px);
+        align-items: stretch;
+        flex-direction: column;
+        overflow: hidden;
+        overflow-x: auto;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .container {
+        margin: 0 30px;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .container {
+        margin: 0 10px;
+    }
+}
