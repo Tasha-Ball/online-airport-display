@@ -1,38 +1,22 @@
 <template>
-    <div class="tag search gap-5">
+    <div class="tag search gap-5 hover">
       <svg-icon name="search" />
-      <input :placeholder="placeholder || 'Поиск'" v-model="value" />
+      <input v-model="search.text" :placeholder="placeholder || 'Поиск'" />
     </div>
 </template>
 
-<script>
-import { computed } from 'vue'
+<script setup>
+import { computed, defineProps } from 'vue'
 import { useStore } from 'vuex'
 import SvgIcon from '@/components/ui/svgIcon.vue'
 
-export default {
-  name: 'uiSearch',
-  components: { SvgIcon },
-
-  emits: ['update:modelValue'],
-
-  props: {
-    modelValue: String,
-    placeholder: String
-  },
-
-  setup (props, { emit }) {
-    const store = useStore()
-
-    return {
-      value: computed({
-        get: () => props.modelValue,
-        set: (value) => {
-          emit('update:modelValue', value)
-          store.commit('searchText', value)
-        }
-      })
-    }
-  }
-}
+defineProps({
+  placeholder: String
+})
+const store = useStore()
+const search = computed(() => store.state.search)
 </script>
+
+<style lang="scss">
+@import "@/assets/sass/search.scss";
+</style>

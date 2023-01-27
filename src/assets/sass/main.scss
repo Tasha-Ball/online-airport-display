@@ -5,10 +5,9 @@ body {
     background: linear-gradient(
         rgba(0, 0, 0, 0.9),
         rgba(0, 0, 0, 0.5)
-      ), url('@/assets/img/runway.png');
-    background-repeat: no-repeat;
+      ), url('@/assets/img/runway.png')
+      no-repeat center center;
     background-size: cover;
-    background-position: center center;
     background-attachment: scroll;
     height: 100vh;
 }
@@ -22,15 +21,13 @@ body {
     height: 100vh;
 }
 
-.error {
-    margin-top: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    img {
-        padding: 10px;
-    }
+.admin-text {
+    position: absolute;
+    width: 100%;
+    color: rgba(250, 125, 0, 0.7);
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
 }
 
 .header {
@@ -41,26 +38,28 @@ body {
         height: 100%;
         width: auto;
     }
-    &__admin {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: auto;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: bold;
-        color: #d1d6ed;
-        padding: 5px 10px;
-        svg {
-            margin: auto 10px auto 0;
-        }
+}
+.admin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #d1d6ed;
+    padding: 5px 10px;
+    white-space: nowrap;
+    height: 35px;
+    
+    .mr-10 {
+        margin: auto 10px auto 0;
     }
 }
 
 .content {
     padding: 20px;
     height: calc(100% - 80px);
-    
     &__info {
         flex: 1;
         display: flex;
@@ -73,6 +72,23 @@ body {
         scroll-behavior: smooth;
         &::-webkit-scrollbar {
             width: 0;
+        }
+    }
+}
+
+table {
+    border-collapse: collapse;
+    tr {
+        height: 45px;
+        td {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+            &:not(:last-child) {
+                padding: 5px 10px;
+            }
+        }
+        &:hover {
+            background: rgba(0, 0, 0, 0.2);
+            cursor: default;
         }
     }
 }

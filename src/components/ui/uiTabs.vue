@@ -25,6 +25,10 @@ const router = useRouter()
 const values = computed(
   () => route.matched[route.matched.length - 2].children || []
 )
-const toRoute = ({ name }) =>
-  router.push({ name, params: { id: route.params.id } })
+const toRoute = ({ path }) =>
+  router.push({ path, query: { user: route.query.user } })
 </script>
+
+<style lang="scss">
+@import "@/assets/sass/tabs.scss";
+</style>

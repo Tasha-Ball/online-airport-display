@@ -74,9 +74,3 @@
     </svg>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'uiPreloader'
-}
-</script>

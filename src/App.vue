@@ -1,8 +1,10 @@
 <template>
-  <div id="overlays" class="overlays">
-    <svg-icons />
+  <div>
+    <div id="overlays" class="overlays">
+      <svg-icons />
+    </div>
+    <router-view />
   </div>
-  <router-view />
 </template>
 
 <script setup>
