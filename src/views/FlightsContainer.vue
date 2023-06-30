@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :key="$route.query?.user">
     <div v-if="isAuth()" class="admin-text text-uppercase">administrator mode is active</div>
     <Teleport to="body">
       <flight-form :show="showModal" @close="showModal = false" />

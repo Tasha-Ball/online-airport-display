@@ -14,7 +14,7 @@ const routes = [
         name: 'departure',
         component: () =>
           import(
-            /* webpackChunkName: "about" */ '../views/flights/FlightsDeparture.vue'
+            /* webpackChunkName: "departure" */ '../views/flights/FlightsDeparture.vue'
           )
       },
       {
@@ -22,7 +22,7 @@ const routes = [
         name: 'arrival',
         component: () =>
           import(
-            /* webpackChunkName: "about" */ '../views/flights/FlightsArrival.vue'
+            /* webpackChunkName: "arrival" */ '../views/flights/FlightsArrival.vue'
           )
       }
     ]
